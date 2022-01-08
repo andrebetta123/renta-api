@@ -1,0 +1,8 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: Rental-Api
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/rental-car-api
