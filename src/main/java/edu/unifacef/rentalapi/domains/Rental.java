@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Rental {
 
   private String id;
-  private String carBoard;
+  private String carBoard112;
   private LocalDateTime deliveryDate;
   private LocalDateTime leaseDate;
   private String costumerId;
@@ -23,12 +23,12 @@ public class Rental {
   private TankStatus tankStatus;
   private LocalDateTime createdDate;
   private LocalDateTime lastModifiedDate;
+  private Car car;
+  private Costumer costumer;
+  private Price price;
   
 //  private String carBoard;
-//  private Car car;
-//  private Costumer costumer;
-//  private Price price;
-//  private KilometersResponse kilometers;
+//  private KilometersDocument kilometers;
 //  private TankStatus tankStatus;
 //  private LocalDateTime createdDate;
 //  private LocalDateTime lastModifiedDate;

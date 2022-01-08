@@ -12,13 +12,14 @@ public class UpdateRentalCarRequest extends RentalRequest {
 	
 	public Rental toDomain(final String board) {
 		return Rental.builder()
-	    	.carBoard(super.getCarBoard())
-	    	.car(super.getCar())
-	    	.costumer(super.getCostumer())
-	    	.price(super.getPrice())
-	    	.kilometers(super.getKilometers())
-	    	.tankStatus(super.getTankStatus())
-	        .build();				
+			.carBoard(super.getCarBoard())
+			.deliveryDate(super.getDeliveryDate())
+			.leaseDate(super.getLeaseDate())
+			.costumerId(super.getCostumerId())
+			.leaseValue(super.getLeaseValue())
+			.kilometers(super.getKilometers())
+			.tankStatus(super.getTankStatus())
+			.build();				
 	}
 
 }
