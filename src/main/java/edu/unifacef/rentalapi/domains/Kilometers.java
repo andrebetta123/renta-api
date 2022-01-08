@@ -13,7 +13,7 @@ public class Kilometers implements Serializable {
 		
 	private static final long serialVersionUID = 1L;	
 		
-	private BigDecimal kmInicial;
-	private BigDecimal kmDevolucao;
+	private BigDecimal initialKm;
+	private BigDecimal returnKm;
 		
 }

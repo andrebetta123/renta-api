@@ -21,9 +21,10 @@ public class CreateRentalRequest extends RentalRequest {
     return Rental.builder()
     	.id(this.id)
     	.carBoard(super.getCarBoard())
-    	.car(super.getCar())
-    	.costumer(super.getCostumer())
-    	.price(super.getPrice())
+    	.deliveryDate(super.getDeliveryDate())
+    	.leaseDate(super.getLeaseDate())
+    	.costumerId(super.getCostumerId())
+    	.leaseValue(super.getLeaseValue())
     	.kilometers(super.getKilometers())
     	.tankStatus(super.getTankStatus())
         .build();
