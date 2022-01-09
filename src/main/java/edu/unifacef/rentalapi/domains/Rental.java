@@ -23,9 +23,6 @@ public class Rental {
   private TankStatus tankStatus;
   private LocalDateTime createdDate;
   private LocalDateTime lastModifiedDate;
-  private Car car;
-  private Price price;
-  private Costumer costumer;
   
   public Rental(final String carBoard) {
     this.carBoard = carBoard;

@@ -17,9 +17,7 @@ import edu.unifacef.rentalapi.gateways.inputs.http.requests.PriceRequest;
 import edu.unifacef.rentalapi.gateways.inputs.http.responses.ListResponse;
 import edu.unifacef.rentalapi.gateways.inputs.http.responses.RentalCarResponse;
 import edu.unifacef.rentalapi.usecases.AddCar;
-import edu.unifacef.rentalapi.usecases.AddCostumer;
 import edu.unifacef.rentalapi.usecases.AddPrice;
-import edu.unifacef.rentalapi.usecases.AddRental;
 import edu.unifacef.rentalapi.usecases.FindByCarBoard;
 import edu.unifacef.rentalapi.usecases.FindRentalCars;
 import lombok.RequiredArgsConstructor;
@@ -30,10 +28,8 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping(value = "/api/v1/cars/")
 public class RentalCarController {
 
-  private final AddRental addRental;
   private final AddCar addCar;
   private final AddPrice addPrice;
-  private final AddCostumer addCostumer;
   private final FindByCarBoard findBycarBoard;
   private final FindRentalCars findRentalCars;
 
@@ -48,18 +44,6 @@ public class RentalCarController {
                        @RequestBody final PriceRequest request) {
     addPrice.execute(carBoard, request.toDomain());
   }
-
-//  @PostMapping(path = "/{carBoard}/costumers")
-//  public void addCarCostumer( @PathVariable final String carBoard,
-//                           @RequestBody final CreateCostumerRequest request) {
-//    addCostumer.execute(carBoard, request.toDomain());
-//  }
-
-//  @PostMapping(path = "/costumers/{id}")
-//  public void addCostumer(@PathVariable final String id, @RequestBody final CostumerRequest request) {
-//	System.out.println(id);
-//    addCostumer.execute(request.toDomain());
-//  }
 
   @GetMapping(path = "/{carBoard}")
   public RentalCarResponse find(@PathVariable final String carBoard) {

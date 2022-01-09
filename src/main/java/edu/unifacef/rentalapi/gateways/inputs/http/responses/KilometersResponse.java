@@ -13,14 +13,14 @@ public class KilometersResponse implements Serializable {
 	private static final long serialVersionUID = 1L;	
 
     @ApiModelProperty(position = 1)
-	private BigDecimal kmInicial;
+	private BigDecimal initialKm;
 
     @ApiModelProperty(position = 2)
-	private BigDecimal kmDevolucao;
+	private BigDecimal returnKm;
 
     public KilometersResponse(final Kilometers kilometers) {		
-		this.kmInicial = kilometers.getKmInicial();
-		this.kmDevolucao = kilometers.getKmInicial();
+		this.initialKm = kilometers.getInitialKm();
+		this.returnKm = kilometers.getReturnKm();
     }
     
 		

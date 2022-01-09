@@ -3,17 +3,16 @@ package edu.unifacef.rentalapi.domains;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
+import lombok.Builder;
 import lombok.Data;
 
-@Document(value = "kilometers")
 @Data
+@Builder
 public class Kilometers implements Serializable {	
 		
 	private static final long serialVersionUID = 1L;	
 		
-	private BigDecimal kmInicial;
-	private BigDecimal kmDevolucao;
+	private BigDecimal initialKm;
+	private BigDecimal returnKm;
 		
 }
