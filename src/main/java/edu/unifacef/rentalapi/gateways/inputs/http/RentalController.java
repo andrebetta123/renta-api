@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.unifacef.rentalapi.domains.RentalCar;
 import edu.unifacef.rentalapi.gateways.inputs.http.requests.CreateCostumerRequest;
-import edu.unifacef.rentalapi.gateways.inputs.http.requests.PriceRequest;
-import edu.unifacef.rentalapi.gateways.inputs.http.responses.CreateRentalRequest;
 import edu.unifacef.rentalapi.gateways.inputs.http.responses.ListResponse;
 import edu.unifacef.rentalapi.gateways.inputs.http.responses.RentalCarResponse;
-import edu.unifacef.rentalapi.usecases.AddCar;
 import edu.unifacef.rentalapi.usecases.AddCostumer;
 import edu.unifacef.rentalapi.usecases.AddPrice;
 import edu.unifacef.rentalapi.usecases.AddRental;
@@ -37,12 +34,12 @@ public class RentalController {
   private final AddCostumer addCostumer;
   private final FindByCarBoard findBycarBoard;
   private final FindRentalCars findRentalCars;
-
-  @PostMapping(path = "/{id}")
-  public void addRental(@PathVariable final String id,
-                         @RequestBody final CreateRentalRequest rental) {
-    addRental.execute(id, rental.toDomain());
-  }
+//
+//  @PostMapping(path = "/{id}")
+//  public void addRental(@PathVariable final String id,
+//                         @RequestBody final CreateRentalRequest rental) {
+//    addRental.execute(id, rental.toDomain());
+//  }
 //
 //  @PostMapping
 //  public CostumerResponse create(@RequestBody @Validated final CreateCostumerRequest request) {

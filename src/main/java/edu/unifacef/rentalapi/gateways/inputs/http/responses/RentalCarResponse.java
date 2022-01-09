@@ -36,11 +36,11 @@ public class RentalCarResponse implements Serializable {
   private LocalDateTime lastModifiedDate;
 
   public RentalCarResponse(final RentalCar rentalCar) {
-	this.id = rentalCar.getId();
+//	this.id = rentalCar.getId();
     this.carBoard = rentalCar.getCarBoard();
     this.car = ofNullable(rentalCar.getCar()).map(CarResponse::new).orElse(null);
     this.price = ofNullable(rentalCar.getPrice()).map(PriceResponse::new).orElse(null);
-    this.inventory = ofNullable(rentalCar.getCostumer()).map(CostumerResponse::new).orElse(null);
+//    this.inventory = ofNullable(rentalCar.getCostumer()).map(CostumerResponse::new).orElse(null);
     this.createdDate = rentalCar.getCreatedDate();
     this.lastModifiedDate = rentalCar.getLastModifiedDate();
   }

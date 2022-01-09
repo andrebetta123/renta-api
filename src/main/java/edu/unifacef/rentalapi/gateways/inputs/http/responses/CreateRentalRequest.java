@@ -2,7 +2,7 @@ package edu.unifacef.rentalapi.gateways.inputs.http.responses;
 
 import javax.validation.constraints.NotNull;
 
-import edu.unifacef.rentalapi.domains.RentalCar;
+import edu.unifacef.rentalapi.domains.Rental;
 import edu.unifacef.rentalapi.gateways.inputs.http.requests.RentalRequest;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -17,9 +17,9 @@ public class CreateRentalRequest extends RentalRequest {
 	private String id;
 	
 	
-	public RentalCar toDomain() {
-    return RentalCar.builder()
-    	.id(this.id)
+	public Rental toDomain() {
+    return Rental.builder()
+//    	.id(this.id)
     	.carBoard(super.getCarBoard())
     	.car(super.getCar())
     	.costumer(super.getCostumer())

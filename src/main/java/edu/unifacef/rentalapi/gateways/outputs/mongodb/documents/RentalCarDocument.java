@@ -16,8 +16,9 @@ import edu.unifacef.rentalapi.domains.RentalCar;
 @Document("rentalCars")
 public class RentalCarDocument {
 
+//	  @Id
+//  private String id;
   @Id
-  private String id;
   private String carBoard;
   private CarDocument car;
   private PriceDocument price;
@@ -27,25 +28,25 @@ public class RentalCarDocument {
   private LocalDateTime lastModifiedDate;
 
   public RentalCarDocument(final RentalCar rentalCar) {
-    this.id = rentalCar.getId();
+//    this.id = rentalCar.getId();
     this.carBoard = rentalCar.getCarBoard();
     this.car = ofNullable(rentalCar.getCar())
         .map(CarDocument::new).orElse(null);
     this.price = ofNullable(rentalCar.getPrice())
         .map(PriceDocument::new).orElse(null);
-    this.costumer = ofNullable(rentalCar.getCostumer())
-        .map(CostumerDocument::new).orElse(null);
+//    this.costumer = ofNullable(rentalCar.getCostumer())
+//        .map(CostumerDocument::new).orElse(null);
     this.createdDate = rentalCar.getCreatedDate();
     this.lastModifiedDate = rentalCar.getLastModifiedDate();
   }
 
   public RentalCar toDomain() {
     return RentalCar.builder()
-    	.id(this.id)
+//    	.id(this.id)
         .carBoard(this.carBoard)
         .car(ofNullable(this.car).map(CarDocument::toDomain).orElse(null))
         .price(ofNullable(this.price).map(PriceDocument::toDomain).orElse(null))
-        .costumer(ofNullable(this.costumer).map(CostumerDocument::toDomain).orElse(null))
+//        .costumer(ofNullable(this.costumer).map(CostumerDocument::toDomain).orElse(null))
         .createdDate(this.createdDate)
         .lastModifiedDate(this.lastModifiedDate)
         .build();

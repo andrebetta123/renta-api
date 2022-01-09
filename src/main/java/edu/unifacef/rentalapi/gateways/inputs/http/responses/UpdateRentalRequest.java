@@ -2,16 +2,16 @@ package edu.unifacef.rentalapi.gateways.inputs.http.responses;
 
 
 
-import edu.unifacef.rentalapi.domains.RentalCar;
+import edu.unifacef.rentalapi.domains.Rental;
 import edu.unifacef.rentalapi.gateways.inputs.http.requests.RentalRequest;
 
 
-public class UpdateRentalCarRequest extends RentalRequest {
+public class UpdateRentalRequest extends RentalRequest {
 	
 	private static final long serialVersionUID = -1414936822726798773L;
 	
-	public RentalCar toDomain(final String board) {
-		return RentalCar.builder()
+	public Rental toDomain(final String board) {
+		return Rental.builder()
 	    	.carBoard(super.getCarBoard())
 //	    	.local
 	    	.car(super.getCar())

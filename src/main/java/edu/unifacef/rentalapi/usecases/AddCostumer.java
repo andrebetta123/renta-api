@@ -3,7 +3,6 @@ package edu.unifacef.rentalapi.usecases;
 import org.springframework.stereotype.Component;
 
 import edu.unifacef.rentalapi.domains.Costumer;
-import edu.unifacef.rentalapi.domains.RentalCar;
 import edu.unifacef.rentalapi.gateways.outputs.RentalCarDataGateway;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,13 +17,14 @@ public class AddCostumer {
   public void execute(final String carBoard, final Costumer costumer) {
     log.info("Adding inventory. Car code: {}", carBoard);
 
-    RentalCar rentalCar = rentalCarDataGateway
-        .findByCode(carBoard).orElse(new RentalCar(carBoard));
-    rentalCar.setCostumer(costumer);
-    rentalCarDataGateway.save(rentalCar);
+//    RentalCar rentalCar = rentalCarDataGateway
+//        .findByCode(carBoard).orElse(new RentalCar(carBoard));
+//    rentalCar.setCostumer(costumer);
+//    rentalCarDataGateway.save(rentalCar);
   }
 
-//  public void execute(final Costumer costumer) {
+
+//    old//  public void execute(final Costumer costumer) {
 //	    log.info("Adding inventory. Costumer: {}", costumer);
 //
 //	    RentalCar rental = new RentalCar();
