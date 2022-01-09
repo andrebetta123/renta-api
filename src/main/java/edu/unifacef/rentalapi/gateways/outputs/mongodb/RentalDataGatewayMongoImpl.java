@@ -30,7 +30,6 @@ public class RentalDataGatewayMongoImpl implements RentalDataGateway {
 
   @Override
   public Optional<Rental> findById(final String rentalId) {
-	System.out.println("Passou em RENTAL");
     return rentalRepository.findById(rentalId).map(RentalDocument::toDomain);
   }
 

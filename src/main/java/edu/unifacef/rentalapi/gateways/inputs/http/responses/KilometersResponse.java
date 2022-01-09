@@ -8,20 +8,18 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Data
-public class KilometersResponse implements Serializable {	
-		
-	private static final long serialVersionUID = 1L;	
+public class KilometersResponse implements Serializable {
 
-    @ApiModelProperty(position = 1)
+	private static final long serialVersionUID = 1L;
+
+	@ApiModelProperty(position = 1)
 	private BigDecimal initialKm;
 
-    @ApiModelProperty(position = 2)
+	@ApiModelProperty(position = 2)
 	private BigDecimal returnKm;
 
-    public KilometersResponse(final Kilometers kilometers) {		
+	public KilometersResponse(final Kilometers kilometers) {
 		this.initialKm = kilometers.getInitialKm();
 		this.returnKm = kilometers.getReturnKm();
-    }
-    
-		
+	}
 }

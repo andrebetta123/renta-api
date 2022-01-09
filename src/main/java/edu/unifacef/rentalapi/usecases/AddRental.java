@@ -12,13 +12,12 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class AddRental {
 
-  private final RentalDataGateway rentalDataGateway;
+	private final RentalDataGateway rentalDataGateway;
 
-  public void execute(final String id, final Rental rental) {
-    log.info("Adding rental. Id: {}", id);
+	public void execute(final String id, final Rental rental) {
+		log.info("Adding rental. Id: {}", id);
 
-    Rental rentalNew = rentalDataGateway
-        .findById(id).orElse(new Rental(id));
-    rentalDataGateway.save(rentalNew);
-  }
+		Rental rentalNew = rentalDataGateway.findById(id).orElse(new Rental(id));
+		rentalDataGateway.save(rentalNew);
+	}
 }

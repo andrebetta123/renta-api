@@ -22,15 +22,4 @@ public class AddCostumer {
 		rentalCostumer.setCostumer(costumer);
 		rentalCostumerDataGateway.save(rentalCostumer);
 	}
-
-//    old//  public void execute(final Costumer costumer) {
-//	    log.info("Adding inventory. Costumer: {}", costumer);
-//
-//	    RentalCar rental = new RentalCar();
-////	    RentalCar rental = rentalCarDataGateway
-////	        .findByCode(carBoard).orElse(new RentalCar(carBoard));
-//	    rental.setCostumer(costumer);
-//	    rentalCarDataGateway.save(rental);
-//	  }
-
 }

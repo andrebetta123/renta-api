@@ -29,32 +29,31 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping(value = "/api/v1/rentals/")
 public class RentalController {
 
-  private final CreateRental addRental;
-  private final UpdateRental updateRental;
+	private final CreateRental addRental;
+	private final UpdateRental updateRental;
 //  private final FindRentalByCarBoard findBycarBoard;
 //  private final FindByCostumerId findByCostumerId;
-  private final FindByRentalId findByRentalId;
-  private final FindRentals findRentals;
+	private final FindByRentalId findByRentalId;
+	private final FindRentals findRentals;
 
-  @PostMapping(path = "/")
-  public void addRental(@RequestBody final CreateRentalRequest rental) {
-	  System.out.println(rental.toDomain().getId());
-    addRental.execute(rental.toDomain());
-  }
+	@PostMapping(path = "/")
+	public void addRental(@RequestBody final CreateRentalRequest rental) {
+		System.out.println(rental.toDomain().getId());
+		addRental.execute(rental.toDomain());
+	}
 
-  @PutMapping(path = "/{rentalId}")
-  public RentalResponse update(@PathVariable final String rentalId,
-                               @RequestBody @Validated final UpdateRentalRequest request) {
-      Rental rental = updateRental.execute(rentalId, request.toDomain(rentalId));
-      return new RentalResponse(rental);
-  }
+	@PutMapping(path = "/{rentalId}")
+	public RentalResponse update(@PathVariable final String rentalId,
+			@RequestBody @Validated final UpdateRentalRequest request) {
+		Rental rental = updateRental.execute(rentalId, request.toDomain(rentalId));
+		return new RentalResponse(rental);
+	}
 
-  @GetMapping(path = "/{rentalId}")
-  public RentalResponse findById(@PathVariable final String rentalId) {
-      Rental rental = findByRentalId.execute(rentalId);
-      return new RentalResponse(rental);
-  }
-
+	@GetMapping(path = "/{rentalId}")
+	public RentalResponse findById(@PathVariable final String rentalId) {
+		Rental rental = findByRentalId.execute(rentalId);
+		return new RentalResponse(rental);
+	}
 
 //  @GetMapping(path = "/{carBoard}")
 //  public RentalResponse findByCarBoard(@PathVariable final String carBoard) {
@@ -68,11 +67,10 @@ public class RentalController {
 //    return new RentalCostumerResponse(rentalCostumer);
 //  }
 
-  @GetMapping
-  public ListResponse<RentalResponse> findByPage(@RequestParam(defaultValue = "0") final Integer page,
-                                                 @RequestParam(defaultValue = "20") final Integer size) {
-    Page<RentalResponse> carPage =
-        findRentals.execute(PageRequest.of(page, size)).map(RentalResponse::new);
-    return new ListResponse<>(carPage);
-  }
+	@GetMapping
+	public ListResponse<RentalResponse> findByPage(@RequestParam(defaultValue = "0") final Integer page,
+			@RequestParam(defaultValue = "20") final Integer size) {
+		Page<RentalResponse> carPage = findRentals.execute(PageRequest.of(page, size)).map(RentalResponse::new);
+		return new ListResponse<>(carPage);
+	}
 }

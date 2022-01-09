@@ -29,13 +29,11 @@ public class RentalCarDataGatewayMongoImpl implements RentalCarDataGateway {
 
   @Override
   public Optional<RentalCar> findById(final String id) {
-	System.out.println("Passou");
     return rentalCarRepository.findById(id).map(RentalCarDocument::toDomain);
   }
 
   @Override
   public Optional<RentalCar> findByCode(final String carBoard) {
-	System.out.println("Passou");
     return rentalCarRepository.findById(carBoard).map(RentalCarDocument::toDomain);
   }
 

@@ -30,7 +30,6 @@ public class RentalCostumerDataGatewayMongoImpl implements RentalCostumerDataGat
 
 	@Override
 	public Optional<RentalCostumer> findById(final String id) {
-		System.out.println("PassouCostumer");
 		return rentalCostumerRepository.findById(id).map(RentalCostumerDocument::toDomain);
 	}
 

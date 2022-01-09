@@ -13,18 +13,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RentalCar {
 
-//  private String id;
-  private String carBoard;
-  private Car car;
-//  private Costumer costumer;
-  private Price price;
-  private Kilometers kilometers;
-  private TankStatus tankStatus;
-  private LocalDateTime createdDate;
-  private LocalDateTime lastModifiedDate;
+	private String carBoard;
+	private Car car;
+	private Price price;
+	private Kilometers kilometers;
+	private TankStatus tankStatus;
+	private LocalDateTime createdDate;
+	private LocalDateTime lastModifiedDate;
 
-  public RentalCar(final String carBoard) {
-    this.carBoard = carBoard;
-  }
+	public RentalCar(final String carBoard) {
+		this.carBoard = carBoard;
+	}
 
 }

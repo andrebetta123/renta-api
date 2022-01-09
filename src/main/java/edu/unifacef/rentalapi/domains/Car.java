@@ -13,11 +13,11 @@ public class Car {
 	private String brand;
 	private String model;
 	private String color;
-	private String year;	
+	private String year;
 	private TypeCar typeCar;
 	private TankStatus tankStatus;
 	private Boolean availability;
 	private LocalDateTime createdDate;
-	private LocalDateTime lastModifieldDate;	
+	private LocalDateTime lastModifieldDate;
 
 }

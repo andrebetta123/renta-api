@@ -14,10 +14,10 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class FindRentalCostumers {
 
-  private final RentalCostumerDataGateway rentalCostumerDataGateway;
+	private final RentalCostumerDataGateway rentalCostumerDataGateway;
 
-  public Page<RentalCostumer> execute(final Pageable pageable) {
-    log.info("Find rental costumers. Page: {}, Size: {}", pageable.getPageNumber(), pageable.getPageSize());
-    return rentalCostumerDataGateway.findByPage(pageable);
-  }
+	public Page<RentalCostumer> execute(final Pageable pageable) {
+		log.info("Find rental costumers. Page: {}, Size: {}", pageable.getPageNumber(), pageable.getPageSize());
+		return rentalCostumerDataGateway.findByPage(pageable);
+	}
 }

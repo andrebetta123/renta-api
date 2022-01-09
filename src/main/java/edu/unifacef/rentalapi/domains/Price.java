@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 public class Price {
 
-  private Double from;
-  private Double to;
-  
+	private Double from;
+	private Double to;
+
 }

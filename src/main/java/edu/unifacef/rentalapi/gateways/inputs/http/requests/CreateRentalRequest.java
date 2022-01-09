@@ -15,7 +15,6 @@ public class CreateRentalRequest extends RentalRequest {
 	@NotNull(message = "{required.field}")
 	private String id;
 	
-	
 	public Rental toDomain() {
     return Rental.builder()
     	.id(this.id)

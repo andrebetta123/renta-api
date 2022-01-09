@@ -28,34 +28,32 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping(value = "/api/v1/cars/")
 public class RentalCarController {
 
-  private final AddCar addCar;
-  private final AddPrice addPrice;
-  private final FindByCarBoard findBycarBoard;
-  private final FindRentalCars findRentalCars;
+	private final AddCar addCar;
+	private final AddPrice addPrice;
+	private final FindByCarBoard findBycarBoard;
+	private final FindRentalCars findRentalCars;
 
-  @PostMapping(path = "/{carBoard}")
-  public void addCar(@PathVariable final String carBoard,
-                         @RequestBody final CarRequest request) {
-    addCar.execute(carBoard, request.toDomain());
-  }
+	@PostMapping(path = "/{carBoard}")
+	public void addCar(@PathVariable final String carBoard, @RequestBody final CarRequest request) {
+		addCar.execute(carBoard, request.toDomain());
+	}
 
-  @PostMapping(path = "/{carBoard}/prices")
-  public void addPrice(@PathVariable final String carBoard,
-                       @RequestBody final PriceRequest request) {
-    addPrice.execute(carBoard, request.toDomain());
-  }
+	@PostMapping(path = "/{carBoard}/prices")
+	public void addPrice(@PathVariable final String carBoard, @RequestBody final PriceRequest request) {
+		addPrice.execute(carBoard, request.toDomain());
+	}
 
-  @GetMapping(path = "/{carBoard}")
-  public RentalCarResponse find(@PathVariable final String carBoard) {
-    RentalCar rentalCar = findBycarBoard.execute(carBoard);
-    return new RentalCarResponse(rentalCar);
-  }
+	@GetMapping(path = "/{carBoard}")
+	public RentalCarResponse find(@PathVariable final String carBoard) {
+		RentalCar rentalCar = findBycarBoard.execute(carBoard);
+		return new RentalCarResponse(rentalCar);
+	}
 
-  @GetMapping
-  public ListResponse<RentalCarResponse> findByPage(@RequestParam(defaultValue = "0") final Integer page,
-                                                  @RequestParam(defaultValue = "20") final Integer size) {
-    Page<RentalCarResponse> carPage =
-        findRentalCars.execute(PageRequest.of(page, size)).map(RentalCarResponse::new);
-    return new ListResponse<>(carPage);
-  }
+	@GetMapping
+	public ListResponse<RentalCarResponse> findByPage(@RequestParam(defaultValue = "0") final Integer page,
+			@RequestParam(defaultValue = "20") final Integer size) {
+		Page<RentalCarResponse> carPage = findRentalCars.execute(PageRequest.of(page, size))
+				.map(RentalCarResponse::new);
+		return new ListResponse<>(carPage);
+	}
 }

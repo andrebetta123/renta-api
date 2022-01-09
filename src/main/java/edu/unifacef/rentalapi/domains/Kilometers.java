@@ -8,11 +8,11 @@ import lombok.Data;
 
 @Data
 @Builder
-public class Kilometers implements Serializable {	
-		
-	private static final long serialVersionUID = 1L;	
-		
+public class Kilometers implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	private BigDecimal initialKm;
 	private BigDecimal returnKm;
-		
+
 }

@@ -15,17 +15,16 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class CreateRental {
 
-    private final RentalDataGateway rentalDataGateway;
-    private final MessageUtils messageUtils;
-    
-    public Rental execute(final Rental rental){
-        log.info("Create rental. Rental id: {}",rental.getId());
-        if(rentalDataGateway.findById(rental.getId()).isPresent()){
-            throw new IllegalArgumentException(
-                    messageUtils.getMessage(RENTAL_ALREADY_EXISTS, rental.getId()));
-        }
+	private final RentalDataGateway rentalDataGateway;
+	private final MessageUtils messageUtils;
 
-        Rental saved = rentalDataGateway.save(rental);
-        return saved;
-    }
+	public Rental execute(final Rental rental) {
+		log.info("Create rental. Rental id: {}", rental.getId());
+		if (rentalDataGateway.findById(rental.getId()).isPresent()) {
+			throw new IllegalArgumentException(messageUtils.getMessage(RENTAL_ALREADY_EXISTS, rental.getId()));
+		}
+
+		Rental saved = rentalDataGateway.save(rental);
+		return saved;
+	}
 }

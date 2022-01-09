@@ -1,10 +1,12 @@
 package edu.unifacef.rentalapi.gateways.inputs.http.responses;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +17,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class ErrorResponse implements Serializable {
 
-    private static final long serialVersionUID = -130292785026387590L;
-    private List<String> errors = new ArrayList();
+	private static final long serialVersionUID = -130292785026387590L;
+	private List<String> errors = new ArrayList();
 }

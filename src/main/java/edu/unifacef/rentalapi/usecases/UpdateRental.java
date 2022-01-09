@@ -16,25 +16,17 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class UpdateRental {
 
-  private final RentalDataGateway rentalDataGateway;
-  private final MessageUtils messageUtils;
+	private final RentalDataGateway rentalDataGateway;
+	private final MessageUtils messageUtils;
 
-  public Rental execute(final String id, final Rental rental) {
-      log.info("Update rental. Rental id: {}", rental.getId());
-      Rental oldRental = rentalDataGateway.findById(rental.getId()).orElseThrow(() ->
-              new NotFoundException(messageUtils.getMessage(RENTAL_NOT_FOUND, rental.getId())));
-      rental.setCreatedDate(oldRental.getCreatedDate());
+	public Rental execute(final String id, final Rental rental) {
+		log.info("Update rental. Rental id: {}", rental.getId());
+		Rental oldRental = rentalDataGateway.findById(rental.getId())
+				.orElseThrow(() -> new NotFoundException(messageUtils.getMessage(RENTAL_NOT_FOUND, rental.getId())));
+		rental.setCreatedDate(oldRental.getCreatedDate());
 
-      Rental newRental = rentalDataGateway.save(rental);
-      return newRental;
-  }
-  
-//
- 
-//	  log.info("Changing rental. Id: {}", id);
-//
-//    Rental rentalNew = rentalDataGateway
-//        .findById(id).orElse(new Rental(id));
-//    rentalDataGateway.save(rentalNew);
-//  }
+		Rental newRental = rentalDataGateway.save(rental);
+		return newRental;
+	}
+
 }

@@ -16,12 +16,12 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class FindByRentalId {
 
-  private final RentalDataGateway rentalDataGateway;
-  private final MessageUtils messageUtils;
+	private final RentalDataGateway rentalDataGateway;
+	private final MessageUtils messageUtils;
 
-  public Rental execute(final String id) {
-    log.info("Find rental. Rental ID: {}", id);
-    return rentalDataGateway.findById(id).orElseThrow(
-        () -> new NotFoundException(messageUtils.getMessage(RENTAL_NOT_FOUND, id)));
-  }  
+	public Rental execute(final String id) {
+		log.info("Find rental. Rental ID: {}", id);
+		return rentalDataGateway.findById(id)
+				.orElseThrow(() -> new NotFoundException(messageUtils.getMessage(RENTAL_NOT_FOUND, id)));
+	}
 }

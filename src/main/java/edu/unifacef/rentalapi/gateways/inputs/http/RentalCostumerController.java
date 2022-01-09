@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import edu.unifacef.rentalapi.domains.RentalCostumer;
 import edu.unifacef.rentalapi.gateways.inputs.http.requests.UpdateCostumerRequest;
 import edu.unifacef.rentalapi.gateways.inputs.http.responses.ListResponse;
-import edu.unifacef.rentalapi.gateways.inputs.http.responses.RentalCarResponse;
 import edu.unifacef.rentalapi.gateways.inputs.http.responses.RentalCostumerResponse;
 import edu.unifacef.rentalapi.usecases.AddCostumer;
 import edu.unifacef.rentalapi.usecases.FindByCostumerId;

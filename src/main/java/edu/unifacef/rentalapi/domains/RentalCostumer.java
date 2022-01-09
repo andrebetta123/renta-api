@@ -12,13 +12,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RentalCostumer {
 
-  private String costumerId;
-  private Costumer costumer;
-  private LocalDateTime createdDate;
-  private LocalDateTime lastModifiedDate;
+	private String costumerId;
+	private Costumer costumer;
+	private LocalDateTime createdDate;
+	private LocalDateTime lastModifiedDate;
 
-  public RentalCostumer(final String costumerId) {
-    this.costumerId = costumerId;
-  }
+	public RentalCostumer(final String costumerId) {
+		this.costumerId = costumerId;
+	}
 
 }

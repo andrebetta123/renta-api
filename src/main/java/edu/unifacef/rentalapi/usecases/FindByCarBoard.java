@@ -17,12 +17,12 @@ import edu.unifacef.rentalapi.utils.MessageUtils;
 @RequiredArgsConstructor
 public class FindByCarBoard {
 
-  private final RentalCarDataGateway rentalCarDataGateway;
-  private final MessageUtils messageUtils;
+	private final RentalCarDataGateway rentalCarDataGateway;
+	private final MessageUtils messageUtils;
 
-  public RentalCar execute(final String code) {
-    log.info("Find rentalCar. Car code: {}", code);
-    return rentalCarDataGateway.findByCode(code).orElseThrow(
-        () -> new NotFoundException(messageUtils.getMessage(RENTAL_CAR_NOT_FOUND, code)));
-  }
+	public RentalCar execute(final String code) {
+		log.info("Find rentalCar. Car code: {}", code);
+		return rentalCarDataGateway.findByCode(code)
+				.orElseThrow(() -> new NotFoundException(messageUtils.getMessage(RENTAL_CAR_NOT_FOUND, code)));
+	}
 }

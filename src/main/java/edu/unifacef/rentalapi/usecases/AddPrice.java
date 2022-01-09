@@ -13,14 +13,13 @@ import edu.unifacef.rentalapi.gateways.outputs.RentalCarDataGateway;
 @RequiredArgsConstructor
 public class AddPrice {
 
-  private final RentalCarDataGateway rentalCarDataGateway;
+	private final RentalCarDataGateway rentalCarDataGateway;
 
-  public void execute(final String carBoard, final Price price) {
-    log.info("Adding price. Car code: {}", carBoard);
+	public void execute(final String carBoard, final Price price) {
+		log.info("Adding price. Car code: {}", carBoard);
 
-    RentalCar rentalCar = rentalCarDataGateway
-        .findByCode(carBoard).orElse(new RentalCar(carBoard));
-    rentalCar.setPrice(price);
-    rentalCarDataGateway.save(rentalCar);
-  }
+		RentalCar rentalCar = rentalCarDataGateway.findByCode(carBoard).orElse(new RentalCar(carBoard));
+		rentalCar.setPrice(price);
+		rentalCarDataGateway.save(rentalCar);
+	}
 }

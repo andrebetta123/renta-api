@@ -8,21 +8,17 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class KilometersDocument {	
-		
+public class KilometersDocument {
+
 	private BigDecimal initialKm;
 	private BigDecimal returnKm;
-	
-	  public KilometersDocument(final Kilometers kilometers) {
-		    this.initialKm = kilometers.getInitialKm();
-		    this.returnKm = kilometers.getReturnKm();
-		  }
 
-		  public Kilometers toDomain() {
-		    return Kilometers.builder()
-		        .initialKm(this.initialKm)
-		        .returnKm(this.returnKm)
-		        .build();
-		  }	
-		
+	public KilometersDocument(final Kilometers kilometers) {
+		this.initialKm = kilometers.getInitialKm();
+		this.returnKm = kilometers.getReturnKm();
+	}
+
+	public Kilometers toDomain() {
+		return Kilometers.builder().initialKm(this.initialKm).returnKm(this.returnKm).build();
+	}
 }
