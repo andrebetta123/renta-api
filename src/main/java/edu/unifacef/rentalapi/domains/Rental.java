@@ -24,8 +24,8 @@ public class Rental {
   private LocalDateTime createdDate;
   private LocalDateTime lastModifiedDate;
   private Car car;
-  private Costumer costumer;
   private Price price;
+  private Costumer costumer;
   
 //  private String carBoard;
 //  private KilometersDocument kilometers;

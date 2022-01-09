@@ -27,6 +27,9 @@ public class CreateRentalRequest extends RentalRequest {
     	.leaseValue(super.getLeaseValue())
     	.kilometers(super.getKilometers())
     	.tankStatus(super.getTankStatus())
+    	.car(super.getCar())
+    	.price(super.getPrice())
+    	.costumer(super.getCostumer())
         .build();
   }
 

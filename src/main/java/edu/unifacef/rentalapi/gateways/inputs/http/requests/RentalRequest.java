@@ -5,7 +5,10 @@ import java.time.LocalDateTime;
 
 import javax.validation.constraints.NotNull;
 
+import edu.unifacef.rentalapi.domains.Car;
+import edu.unifacef.rentalapi.domains.Costumer;
 import edu.unifacef.rentalapi.domains.Kilometers;
+import edu.unifacef.rentalapi.domains.Price;
 import edu.unifacef.rentalapi.domains.TankStatus;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -38,5 +41,13 @@ public class RentalRequest implements Serializable {
 	@ApiModelProperty(position = 7)
 	private TankStatus tankStatus;
 	
+	@ApiModelProperty(position = 8)
+	private Car car;
+	
+	@ApiModelProperty(position = 8)
+	private Price price;
+	
+	@ApiModelProperty(position = 10)
+	private Costumer Costumer;
 	
 }
