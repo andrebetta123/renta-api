@@ -14,8 +14,8 @@ public class RentalCarResponse implements Serializable {
 
   private static final long serialVersionUID = 2433564720627372962L;
 
-  @ApiModelProperty(position = 0)
-  private String id;
+//  @ApiModelProperty(position = 0)
+//  private String id;
 
   @ApiModelProperty(position = 1)
   private String carBoard;

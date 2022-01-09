@@ -1,7 +1,6 @@
 package edu.unifacef.rentalapi.domains;
 
 import java.time.LocalDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,20 +10,15 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RentalCar {
+public class RentalCostumer {
 
-//  private String id;
-  private String carBoard;
-  private Car car;
-//  private Costumer costumer;
-  private Price price;
-  private Kilometers kilometers;
-  private TankStatus tankStatus;
+  private String costumerId;
+  private Costumer costumer;
   private LocalDateTime createdDate;
   private LocalDateTime lastModifiedDate;
 
-  public RentalCar(final String carBoard) {
-    this.carBoard = carBoard;
+  public RentalCostumer(final String costumerId) {
+    this.costumerId = costumerId;
   }
 
 }

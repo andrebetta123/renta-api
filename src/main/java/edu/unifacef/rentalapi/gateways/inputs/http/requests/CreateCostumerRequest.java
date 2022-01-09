@@ -17,7 +17,7 @@ public class CreateCostumerRequest extends CostumerRequest {
 
     public Costumer toDomain() {
         return Costumer.builder()
-                .id(this.id)
+//                .id(this.id)
                 .name(super.getName())
                 .phone(super.getPhone())
                 .driverLicense(super.getDriverLicense())
