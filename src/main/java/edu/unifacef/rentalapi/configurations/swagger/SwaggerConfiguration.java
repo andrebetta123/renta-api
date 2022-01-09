@@ -31,7 +31,7 @@ public class SwaggerConfiguration {
 
   private ApiInfo getApiInfo() {
     return new ApiInfoBuilder()
-        .title("Unifacef - Rental Api")
+        .title("Unifacef - RentalCar Api")
         .description("API para cadastro de locações de veículos")
         .version("1")
         .build();

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.unifacef.rentalapi.domains.Rental;
+import edu.unifacef.rentalapi.domains.RentalCar;
 import edu.unifacef.rentalapi.gateways.inputs.http.requests.CreateCostumerRequest;
 import edu.unifacef.rentalapi.gateways.inputs.http.requests.PriceRequest;
 import edu.unifacef.rentalapi.gateways.inputs.http.responses.CreateRentalRequest;
@@ -70,13 +70,13 @@ public class RentalController {
 //    addCar.execute(carBoard, request.toDomain());
 //  }
 
-  @PostMapping(path = "/{carBoard}/prices")
-  public void addPrice(@PathVariable final String carBoard,
-                       @RequestBody final PriceRequest request) {
-    addPrice.execute(carBoard, request.toDomain());
-  }
+//  @PostMapping(path = "/{carBoard}/prices")
+//  public void addPrice(@PathVariable final String carBoard,
+//                       @RequestBody final PriceRequest request) {
+//    addPrice.execute(carBoard, request.toDomain());
+//  }
 
-  @PostMapping(path = "/{carBoard}/costumers")
+  @PostMapping(path = "/costumers")
   public void addCarCostumer( @PathVariable final String carBoard,
                            @RequestBody final CreateCostumerRequest request) {
     addCostumer.execute(carBoard, request.toDomain());
@@ -90,8 +90,8 @@ public class RentalController {
 
   @GetMapping(path = "/{carBoard}")
   public RentalCarResponse find(@PathVariable final String carBoard) {
-    Rental rental = findBycarBoard.execute(carBoard);
-    return new RentalCarResponse(rental);
+    RentalCar rentalCar = findBycarBoard.execute(carBoard);
+    return new RentalCarResponse(rentalCar);
   }
 
   @GetMapping

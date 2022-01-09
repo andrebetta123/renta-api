@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Rental {
+public class RentalCar {
 
   private String id;
   private String carBoard;
@@ -22,7 +22,7 @@ public class Rental {
   private LocalDateTime createdDate;
   private LocalDateTime lastModifiedDate;
 
-  public Rental(final String carBoard) {
+  public RentalCar(final String carBoard) {
     this.carBoard = carBoard;
   }
 

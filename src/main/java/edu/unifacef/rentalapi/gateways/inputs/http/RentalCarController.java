@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.unifacef.rentalapi.domains.Rental;
+import edu.unifacef.rentalapi.domains.RentalCar;
 import edu.unifacef.rentalapi.gateways.inputs.http.requests.CarRequest;
-import edu.unifacef.rentalapi.gateways.inputs.http.requests.CreateCostumerRequest;
+import edu.unifacef.rentalapi.gateways.inputs.http.requests.PriceRequest;
 import edu.unifacef.rentalapi.gateways.inputs.http.responses.ListResponse;
 import edu.unifacef.rentalapi.gateways.inputs.http.responses.RentalCarResponse;
 import edu.unifacef.rentalapi.usecases.AddCar;
@@ -37,29 +37,23 @@ public class RentalCarController {
   private final FindByCarBoard findBycarBoard;
   private final FindRentalCars findRentalCars;
 
-//  @PostMapping(path = "/{id}")
-//  public void addRental(@PathVariable final String id,
-//                         @RequestBody final CreateRentalRequest rental) {
-//    addRental.execute(id, rental.toDomain());
-//  }
-
   @PostMapping(path = "/{carBoard}")
   public void addCar(@PathVariable final String carBoard,
                          @RequestBody final CarRequest request) {
     addCar.execute(carBoard, request.toDomain());
   }
 
-//  @PostMapping(path = "/{carBoard}/prices")
-//  public void addPrice(@PathVariable final String carBoard,
-//                       @RequestBody final PriceRequest request) {
-//    addPrice.execute(carBoard, request.toDomain());
-//  }
-
-  @PostMapping(path = "/{carBoard}/costumers")
-  public void addCarCostumer( @PathVariable final String carBoard,
-                           @RequestBody final CreateCostumerRequest request) {
-    addCostumer.execute(carBoard, request.toDomain());
+  @PostMapping(path = "/{carBoard}/prices")
+  public void addPrice(@PathVariable final String carBoard,
+                       @RequestBody final PriceRequest request) {
+    addPrice.execute(carBoard, request.toDomain());
   }
+
+//  @PostMapping(path = "/{carBoard}/costumers")
+//  public void addCarCostumer( @PathVariable final String carBoard,
+//                           @RequestBody final CreateCostumerRequest request) {
+//    addCostumer.execute(carBoard, request.toDomain());
+//  }
 
 //  @PostMapping(path = "/costumers/{id}")
 //  public void addCostumer(@PathVariable final String id, @RequestBody final CostumerRequest request) {
@@ -69,8 +63,8 @@ public class RentalCarController {
 
   @GetMapping(path = "/{carBoard}")
   public RentalCarResponse find(@PathVariable final String carBoard) {
-    Rental rental = findBycarBoard.execute(carBoard);
-    return new RentalCarResponse(rental);
+    RentalCar rentalCar = findBycarBoard.execute(carBoard);
+    return new RentalCarResponse(rentalCar);
   }
 
   @GetMapping

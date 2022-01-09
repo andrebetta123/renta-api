@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-import edu.unifacef.rentalapi.domains.Rental;
+import edu.unifacef.rentalapi.domains.RentalCar;
 import lombok.Data;
 
 @Data
@@ -35,13 +35,13 @@ public class RentalCarResponse implements Serializable {
   @ApiModelProperty(position = 6)
   private LocalDateTime lastModifiedDate;
 
-  public RentalCarResponse(final Rental rental) {
-	this.id = rental.getId();
-    this.carBoard = rental.getCarBoard();
-    this.car = ofNullable(rental.getCar()).map(CarResponse::new).orElse(null);
-    this.price = ofNullable(rental.getPrice()).map(PriceResponse::new).orElse(null);
-    this.inventory = ofNullable(rental.getCostumer()).map(CostumerResponse::new).orElse(null);
-    this.createdDate = rental.getCreatedDate();
-    this.lastModifiedDate = rental.getLastModifiedDate();
+  public RentalCarResponse(final RentalCar rentalCar) {
+	this.id = rentalCar.getId();
+    this.carBoard = rentalCar.getCarBoard();
+    this.car = ofNullable(rentalCar.getCar()).map(CarResponse::new).orElse(null);
+    this.price = ofNullable(rentalCar.getPrice()).map(PriceResponse::new).orElse(null);
+    this.inventory = ofNullable(rentalCar.getCostumer()).map(CostumerResponse::new).orElse(null);
+    this.createdDate = rentalCar.getCreatedDate();
+    this.lastModifiedDate = rentalCar.getLastModifiedDate();
   }
 }

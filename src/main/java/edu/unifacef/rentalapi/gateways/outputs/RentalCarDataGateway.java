@@ -4,15 +4,15 @@ import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import edu.unifacef.rentalapi.domains.Rental;
+import edu.unifacef.rentalapi.domains.RentalCar;
 
 public interface RentalCarDataGateway {
 
-  Rental save(Rental rental);
+  RentalCar save(RentalCar rentalCar);
 
-  Optional<Rental> findByCode(String code);
+  Optional<RentalCar> findByCode(String code);
 
-  Optional<Rental> findById(String id);
+  Optional<RentalCar> findById(String id);
   
-  Page<Rental> findByPage(Pageable pageable);
+  Page<RentalCar> findByPage(Pageable pageable);
 }

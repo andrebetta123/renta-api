@@ -9,7 +9,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import edu.unifacef.rentalapi.domains.Rental;
+import edu.unifacef.rentalapi.domains.RentalCar;
 
 @Data
 @NoArgsConstructor
@@ -26,21 +26,21 @@ public class RentalCarDocument {
   @LastModifiedDate
   private LocalDateTime lastModifiedDate;
 
-  public RentalCarDocument(final Rental rental) {
-    this.id = rental.getId();
-    this.carBoard = rental.getCarBoard();
-    this.car = ofNullable(rental.getCar())
+  public RentalCarDocument(final RentalCar rentalCar) {
+    this.id = rentalCar.getId();
+    this.carBoard = rentalCar.getCarBoard();
+    this.car = ofNullable(rentalCar.getCar())
         .map(CarDocument::new).orElse(null);
-    this.price = ofNullable(rental.getPrice())
+    this.price = ofNullable(rentalCar.getPrice())
         .map(PriceDocument::new).orElse(null);
-    this.costumer = ofNullable(rental.getCostumer())
+    this.costumer = ofNullable(rentalCar.getCostumer())
         .map(CostumerDocument::new).orElse(null);
-    this.createdDate = rental.getCreatedDate();
-    this.lastModifiedDate = rental.getLastModifiedDate();
+    this.createdDate = rentalCar.getCreatedDate();
+    this.lastModifiedDate = rentalCar.getLastModifiedDate();
   }
 
-  public Rental toDomain() {
-    return Rental.builder()
+  public RentalCar toDomain() {
+    return RentalCar.builder()
     	.id(this.id)
         .carBoard(this.carBoard)
         .car(ofNullable(this.car).map(CarDocument::toDomain).orElse(null))

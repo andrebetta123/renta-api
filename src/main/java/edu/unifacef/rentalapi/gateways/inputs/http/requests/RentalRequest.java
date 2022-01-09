@@ -8,7 +8,7 @@ import edu.unifacef.rentalapi.domains.Car;
 import edu.unifacef.rentalapi.domains.Costumer;
 import edu.unifacef.rentalapi.domains.Kilometers;
 import edu.unifacef.rentalapi.domains.Price;
-import edu.unifacef.rentalapi.domains.Rental;
+import edu.unifacef.rentalapi.domains.RentalCar;
 import edu.unifacef.rentalapi.domains.TankStatus;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -48,8 +48,8 @@ public class RentalRequest implements Serializable {
 	private TankStatus tankStatus;
 	
 	
-//	  public Rental toDomain() {
-//		    return Rental.builder()
+//	  public RentalCar toDomain() {
+//		    return RentalCar.builder()
 ////		    	.id(this.id)
 //		    	.carBoard(this.carBoard)
 //		    	.car(this.car)
