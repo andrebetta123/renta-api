@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import edu.unifacef.rentalapi.domains.Car;
-import edu.unifacef.rentalapi.domains.Rental;
+import edu.unifacef.rentalapi.domains.RentalCar;
 import edu.unifacef.rentalapi.gateways.outputs.RentalCarDataGateway;
 
 @Slf4j
@@ -18,9 +18,9 @@ public class AddCar {
   public void execute(final String carBoard, final Car car) {
     log.info("Adding rental. Car board: {}", carBoard);
 
-    Rental rental = rentalCarDataGateway
-        .findByCode(carBoard).orElse(new Rental(carBoard));
-    rental.setCar(car);
-    rentalCarDataGateway.save(rental);
+    RentalCar rentalCar = rentalCarDataGateway
+        .findByCode(carBoard).orElse(new RentalCar(carBoard));
+    rentalCar.setCar(car);
+    rentalCarDataGateway.save(rentalCar);
   }
 }

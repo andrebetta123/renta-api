@@ -14,26 +14,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfiguration {
 
-  private static final String BASE_PACKAGE = "edu.unifacef.rentalapi.gateways.inputs.http";
+	private static final String BASE_PACKAGE = "edu.unifacef.rentalapi.gateways.inputs.http";
 
-  @Bean
-  public Docket apis() {
-    return new Docket(DocumentationType.SWAGGER_2)
-        .select()
-        .apis(RequestHandlerSelectors.basePackage(BASE_PACKAGE))
-        .paths(PathSelectors.any())
-        .build()
-        .pathMapping("/")
-        .groupName("rental-api")
-        .useDefaultResponseMessages(false)
-        .apiInfo(getApiInfo());
-  }
+	@Bean
+	public Docket apis() {
+		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage(BASE_PACKAGE))
+				.paths(PathSelectors.any()).build().pathMapping("/").groupName("rental-api")
+				.useDefaultResponseMessages(false).apiInfo(getApiInfo());
+	}
 
-  private ApiInfo getApiInfo() {
-    return new ApiInfoBuilder()
-        .title("Unifacef - Rental Api")
-        .description("API para cadastro de locações de veículos")
-        .version("1")
-        .build();
-  }
+	private ApiInfo getApiInfo() {
+		return new ApiInfoBuilder().title("Unifacef - RentalCar Api")
+				.description("API para cadastro de locações de veículos").version("1").build();
+	}
 }

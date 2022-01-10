@@ -7,7 +7,7 @@ import static edu.unifacef.rentalapi.exceptions.MessageKey.RENTAL_CAR_NOT_FOUND;
 
 import org.springframework.stereotype.Component;
 
-import edu.unifacef.rentalapi.domains.Rental;
+import edu.unifacef.rentalapi.domains.RentalCar;
 import edu.unifacef.rentalapi.exceptions.NotFoundException;
 import edu.unifacef.rentalapi.gateways.outputs.RentalCarDataGateway;
 import edu.unifacef.rentalapi.utils.MessageUtils;
@@ -17,12 +17,12 @@ import edu.unifacef.rentalapi.utils.MessageUtils;
 @RequiredArgsConstructor
 public class FindByCarBoard {
 
-  private final RentalCarDataGateway rentalCarDataGateway;
-  private final MessageUtils messageUtils;
+	private final RentalCarDataGateway rentalCarDataGateway;
+	private final MessageUtils messageUtils;
 
-  public Rental execute(final String code) {
-    log.info("Find rentalCar. Car code: {}", code);
-    return rentalCarDataGateway.findByCode(code).orElseThrow(
-        () -> new NotFoundException(messageUtils.getMessage(RENTAL_CAR_NOT_FOUND, code)));
-  }
+	public RentalCar execute(final String code) {
+		log.info("Find rentalCar. Car code: {}", code);
+		return rentalCarDataGateway.findByCode(code)
+				.orElseThrow(() -> new NotFoundException(messageUtils.getMessage(RENTAL_CAR_NOT_FOUND, code)));
+	}
 }

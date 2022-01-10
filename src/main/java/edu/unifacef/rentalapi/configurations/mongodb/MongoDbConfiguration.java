@@ -6,5 +6,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @Configuration
 @EnableMongoAuditing
-@EnableMongoRepositories(basePackages = {"edu.unifacef.rentalapi.gateways.outputs.mongodb"})
-public class MongoDbConfiguration {}
+@EnableMongoRepositories(basePackages = { "edu.unifacef.rentalapi.gateways.outputs.mongodb" })
+public class MongoDbConfiguration {
+}

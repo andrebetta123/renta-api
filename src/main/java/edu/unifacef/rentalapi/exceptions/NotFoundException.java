@@ -2,10 +2,10 @@ package edu.unifacef.rentalapi.exceptions;
 
 public class NotFoundException extends RuntimeException {
 
-  private static final long serialVersionUID = -7623049475304109271L;
+	private static final long serialVersionUID = -7623049475304109271L;
 
-  public NotFoundException(final String message) {
-    super(message);
-  }
+	public NotFoundException(final String message) {
+		super(message);
+	}
 
 }

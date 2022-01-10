@@ -12,9 +12,9 @@ import edu.unifacef.rentalapi.exceptions.MessageKey;
 @RequiredArgsConstructor
 public class MessageUtils {
 
-  private final MessageSource messageSource;
+	private final MessageSource messageSource;
 
-  public String getMessage(final MessageKey messageKey, final Object... param) {
-    return messageSource.getMessage(messageKey.getKey(), param, getLocale());
-  }
+	public String getMessage(final MessageKey messageKey, final Object... param) {
+		return messageSource.getMessage(messageKey.getKey(), param, getLocale());
+	}
 }

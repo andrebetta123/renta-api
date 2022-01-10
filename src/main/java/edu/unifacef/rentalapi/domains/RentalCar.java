@@ -11,20 +11,17 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Rental {
+public class RentalCar {
 
-	private String id;
 	private String carBoard;
-	private LocalDateTime deliveryDate;
-	private LocalDateTime leaseDate;
-	private String costumerId;
-	private Double leaseValue;
+	private Car car;
+	private Price price;
 	private Kilometers kilometers;
 	private TankStatus tankStatus;
 	private LocalDateTime createdDate;
 	private LocalDateTime lastModifiedDate;
 
-	public Rental(final String carBoard) {
+	public RentalCar(final String carBoard) {
 		this.carBoard = carBoard;
 	}
 

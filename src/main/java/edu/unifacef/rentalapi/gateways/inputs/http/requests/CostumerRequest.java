@@ -28,16 +28,6 @@ public class CostumerRequest implements Serializable {
   private Boolean active;
 
   @ApiModelProperty(position = 5)
-//  @NotNull(message = "{required.field}")
   private Address address;
 
-//  public Costumer toDomain() {
-//    return Costumer.builder()
-//    	.name(this.name)
-//    	.phone(this.phone)
-//    	.driverLicense(this.driverLicense)
-//    	.active(this.active)
-////    	.address(this.address)
-//    	.build();
-//  }
 }

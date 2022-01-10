@@ -8,19 +8,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PriceDocument {
 
-  private Double from;
-  private Double to;
+	private Double from;
+	private Double to;
 
-  public PriceDocument(final Price price) {
-    this.from = price.getFrom();
-    this.to = price.getTo();
-  }
+	public PriceDocument(final Price price) {
+		this.from = price.getFrom();
+		this.to = price.getTo();
+	}
 
-  public Price toDomain() {
-    return Price.builder()
-        .from(this.from)
-        .to(this.to)
-        .build();
-  }
-  
+	public Price toDomain() {
+		return Price.builder().from(this.from).to(this.to).build();
+	}
+
 }
